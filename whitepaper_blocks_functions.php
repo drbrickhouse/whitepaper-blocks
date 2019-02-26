@@ -1,5 +1,6 @@
 <?php
-function whitepaper_parse_bracecodes( array $matches = array() ) {
+
+function whitepaper_parse_handlebars( array $matches = array() ) {
 
 	if (isset($matches[1])) {
 		$key = strtolower( $matches[1] );
@@ -10,9 +11,24 @@ function whitepaper_parse_bracecodes( array $matches = array() ) {
 				return get_the_title();
 				break;
 
+			// Get the post content
+			case 'content':
+				return get_the_content();
+				break;
+
 			// Get the URL of the post
 			case 'permalink':
 				return get_permalink();
+				break;
+
+			// Get the featured image
+			case 'featured_image':
+				return get_the_post_thumbnail_url();
+				break;
+
+			// Get the URL of the post
+			case 'link':
+				return get_field('link');
 				break;
 
 			// Get the year of the post
@@ -50,6 +66,11 @@ function whitepaper_parse_bracecodes( array $matches = array() ) {
 				return get_the_category();
 				break;
 
+			// Get the FontAwesome icon
+			case 'icon':
+				return get_field('font_awesome_icon_class');
+				break;
+
 			// default value
 			default:
 				if (isset($matches[0])) {
@@ -63,8 +84,8 @@ function whitepaper_parse_bracecodes( array $matches = array() ) {
 	return false;
 }
 
-function whitespace_bracecodes($field) {
-	$value = preg_replace_callback( '#\{(.*)\}#Ui', 'whitepaper_parse_bracecodes', $field);
+function whitepaper_handlebars($field) {
+	$value = preg_replace_callback( '#\{{(.*)\}}#Ui', 'whitepaper_parse_handlebars', $field);
 	return $value;
 }
 ?>

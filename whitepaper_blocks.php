@@ -39,9 +39,9 @@ function whitepaper_blocks_render_callback( $block ) {
 	$slug = str_replace('acf/', '', $block['name']);
 
 	// include a template part
-	if( file_exists( get_theme_file_path("templates/whitepaper-{$slug}.php") ) ) {
-		include( get_theme_file_path("templates/whitepaper-{$slug}.php") );
-	}
+	//if( file_exists( 'templates/whitepaper-loop.php' ) ) {
+		include( 'templates/whitepaper-loop.php' );
+	//}
 }
 
 ?>
