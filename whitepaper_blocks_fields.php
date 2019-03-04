@@ -188,6 +188,111 @@ function whitepaper_blocks_register_fields() {
 		'description' => '',
 	));
 
+	acf_add_local_field_group(array(
+		'key' => 'group_5c7d7406e1258',
+		'title' => 'WhitePaper Blocks: Hero',
+		'fields' => array(
+			array(
+				'key' => 'field_5c7d741d2cfed',
+				'label' => 'Background Image',
+				'name' => 'background_image',
+				'type' => 'image',
+				'instructions' => 'The actual image that will be shown with content overlaying it',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'url',
+				'preview_size' => 'large',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array(
+				'key' => 'field_5c7d7a21b8ad6',
+				'label' => 'Block ID',
+				'name' => 'block_id',
+				'type' => 'text',
+				'instructions' => 'A unique CSS ID for this block. Make sure to use all lower case and dashes instead of spaces',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_5c7d798d2cfee',
+				'label' => 'Hero Classes',
+				'name' => 'hero_class',
+				'type' => 'text',
+				'instructions' => 'One or more CSS classes to be added to the hero image container. Separate classes with a space, but make sure that each class uses all lower case and dashes instead of spaces. This is a great place to use Bootstrap rows or containers.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'row',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_5c7d7aa4b8ad7',
+				'label' => 'Hero Overlay',
+				'name' => 'hero_overlay',
+				'type' => 'textarea',
+				'instructions' => 'Any content you\'d like overlaid on the hero image. You can use HTML and Bootstrap here.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 16,
+				'new_lines' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/hero',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => 1,
+		'description' => '',
+	));
+
 	endif;
 }
 
@@ -200,7 +305,7 @@ function whitepaper_choice_generator( $field ) {
     $field['choices'] = array();
 
     //Loop through whatever data you are using, and assign a key/value
-		$types = get_post_types( array( 'public' => true, '_builtin' => true ) );
+		$types = get_post_types( array( 'public' => true ) );
     foreach($types as $type) {
         $field['choices'][$type] = $type;
     }

@@ -27,6 +27,15 @@ function whitepaper_register_blocks() {
 	        'icon'				=> 'controls-repeat',
 	        'keywords'			=> array( 'query' ),
 	    ));
+			acf_register_block(array(
+	        'name'				=> 'hero',
+	        'title'				=> __( 'Hero' ),
+	        'description'		=> __( 'A customizable hero image block.' ),
+	        'render_callback'	=> 'whitepaper_blocks_render_callback',
+	        'category'			=> 'formatting',
+	        'icon'				=> 'slides',
+	        'keywords'			=> array( 'hero', 'banner' ),
+	    ));
 	}
 }
 
@@ -39,9 +48,9 @@ function whitepaper_blocks_render_callback( $block ) {
 	$slug = str_replace('acf/', '', $block['name']);
 
 	// include a template part
-	//if( file_exists( 'templates/whitepaper-loop.php' ) ) {
-		include( 'templates/whitepaper-loop.php' );
-	//}
+	if( file_exists( __DIR__ . '/templates/whitepaper-' . $slug . '.php' ) ) {
+		include( 'templates/whitepaper-'. $slug . '.php' );
+	}
 }
 
 ?>
