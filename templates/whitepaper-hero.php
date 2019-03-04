@@ -9,7 +9,7 @@ $block_id = get_field( 'block_id' );
 $hero_class = get_field( 'hero_class' );
 $hero_overlay = get_field( 'hero_overlay' );
 
-//Before The Loop
+//Hero Layout
 ?>
 
 <div class="row whitepaper-block" id="<?php echo $block_id ?>">
