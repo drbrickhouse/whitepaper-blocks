@@ -53,4 +53,12 @@ function whitepaper_blocks_render_callback( $block ) {
 	}
 }
 
+/*********** Traditional Blocks (Not using ACF) *********************/
+function whitepaper_register_traditional_blocks() {
+	// Wrapper Block
+	wp_enqueue_script( 'whitepaper-blocks-wrapper-block-js', plugins_url( '/traditional-blocks/whitepaper-blocks-wrapper-build.js', __FILE__ ), array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), true );
+}
+
+// Hook above funtion into enqueue_block_editor_assets
+add_action( 'enqueue_block_editor_assets', 'whitepaper_register_traditional_blocks' );
 ?>
