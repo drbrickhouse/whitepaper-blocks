@@ -28,7 +28,7 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 
 			// Get the URL of the post
 			case 'link':
-				return get_field('link');
+				return get_field( 'link', get_the_ID() );
 				break;
 
 			// Get the year of the post
@@ -68,7 +68,7 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 
 			// Get the FontAwesome icon
 			case 'icon':
-				return get_field('font_awesome_icon_class');
+				return get_field( 'font_awesome_icon_class', get_the_ID() );
 				break;
 
 			// default value
