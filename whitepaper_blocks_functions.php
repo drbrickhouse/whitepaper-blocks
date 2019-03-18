@@ -1,5 +1,9 @@
 <?php
 
+if ( file_exists( get_stylesheet_directory() . '/inc/whitepaper_custom_handlebars.php' ) ) {
+	include_once( get_stylesheet_directory() . '/inc/whitepaper_custom_handlebars.php' );
+}
+
 function whitepaper_parse_handlebars( array $matches = array() ) {
 
 	if (isset($matches[1])) {
@@ -86,6 +90,9 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 
 function whitepaper_handlebars($field) {
 	$value = preg_replace_callback( '#\{{(.*)\}}#Ui', 'whitepaper_parse_handlebars', $field);
+	if ( file_exists( get_stylesheet_directory() . '/inc/whitepaper_custom_handlebars.php' ) ) {
+		$value = preg_replace_callback( '#\{{(.*)\}}#Ui', 'whitepaper_custom_handlebars', $value);
+	}
 	return $value;
 }
 ?>
