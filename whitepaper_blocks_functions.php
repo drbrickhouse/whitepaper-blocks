@@ -20,6 +20,11 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 				return get_the_content();
 				break;
 
+			// Get the post excerpt
+			case 'excerpt':
+				return get_the_excerpt();
+				break;
+
 			// Get the URL of the post
 			case 'permalink':
 				return get_permalink();
