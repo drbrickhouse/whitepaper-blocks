@@ -75,6 +75,26 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 				return get_field( 'font_awesome_icon_class', get_the_ID() );
 				break;
 
+			// Get the event start date
+			case 'event-start-date':
+				return echo eo_get_the_start("M j, Y");
+				break;
+
+			// Get the event end date
+			case 'event-end-date':
+				return echo eo_get_the_end("M j, Y");
+				break;
+
+			// Get the event start time
+			case 'event-start-time':
+				return echo eo_get_the_start("g:i A");
+				break;
+
+			// Get the event end time
+			case 'event-end-time':
+				return echo eo_get_the_end("g:i A");
+				break;
+
 			// default value
 			default:
 				if (isset($matches[0])) {
