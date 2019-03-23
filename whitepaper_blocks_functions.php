@@ -75,6 +75,7 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 				return get_field( 'font_awesome_icon_class', get_the_ID() );
 				break;
 
+			/***** The following handlebars are built to work with the Events Organiser plugin *****/
 			// Get the event start date
 			case 'event-start-date':
 				return echo eo_get_the_start("M j, Y");
