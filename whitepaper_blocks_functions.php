@@ -78,22 +78,22 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 			/***** The following handlebars are built to work with the Events Organiser plugin *****/
 			// Get the event start date
 			case 'event-start-date':
-				return echo eo_get_the_start("M j, Y");
+				return eo_get_the_start("M j, Y");
 				break;
 
 			// Get the event end date
 			case 'event-end-date':
-				return echo eo_get_the_end("M j, Y");
+				return eo_get_the_end("M j, Y");
 				break;
 
 			// Get the event start time
 			case 'event-start-time':
-				return echo eo_get_the_start("g:i A");
+				return eo_get_the_start("g:i A");
 				break;
 
 			// Get the event end time
 			case 'event-end-time':
-				return echo eo_get_the_end("g:i A");
+				return eo_get_the_end("g:i A");
 				break;
 
 			// default value
