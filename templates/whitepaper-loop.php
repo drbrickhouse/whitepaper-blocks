@@ -12,6 +12,8 @@ $post_class = get_field( 'post_class' );
 $before_loop_layout = get_field( 'before_loop_layout' );
 $loop_layout_input = get_field( 'post_layout');
 $after_loop_layout = get_field( 'after_loop_layout' );
+$taxonomy = get_field( 'taxonomy' );
+$taxonomy_term = get_field( 'taxonomy_term' );
 
 //Before The Loop
 ?>
@@ -31,6 +33,15 @@ $after_loop_layout = get_field( 'after_loop_layout' );
         <div class="row" id="post-area">
           <?php
           $args = array( 'post_type' => $post_type, 'posts_per_page' => $num_posts );
+          if(!empty($taxonomy) && !empty($taxonomy_term)) {
+            $args['tax_query'] = array(
+              array(
+                  'taxonomy' => $taxonomy,
+                  'field'    => 'slug',
+                  'terms'    => $taxonomy_term,
+                )
+              );
+          }
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <div class="<?php echo $post_class; ?>">
