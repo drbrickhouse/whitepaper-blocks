@@ -80,6 +80,20 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 				return get_field( 'font_awesome_icon_class', get_the_ID() );
 				break;
 
+			/***** Staff *****/
+			// Get the FontAwesome icon
+			case 'staff_position':
+				return get_field( 'staff_position', get_the_ID() );
+				break;
+
+			case 'email':
+				return get_field( 'email_address', get_the_ID() );
+				break;
+
+			case 'phone':
+				return get_field( 'phone_number', get_the_ID() );
+				break;
+
 			/***** The following handlebars are built to work with the Events Organiser plugin *****/
 			// Get the event start date
 			case 'event_start_date':
