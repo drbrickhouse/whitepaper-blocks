@@ -45,9 +45,19 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 				return get_the_time('Y');
 				break;
 
-			// Get the month of the post
+			// Get the month number of the post
 			case 'monthnum':
 				return get_the_time('m');
+				break;
+
+			// Get the month name of the post
+			case 'monthname':
+				return get_the_time('F');
+				break;
+
+			// Get the month abbreviation of the post
+			case 'monthabr':
+				return get_the_time('F');
 				break;
 
 			// Get the day of the post
