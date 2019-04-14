@@ -27,6 +27,19 @@ function whitepaper_register_blocks() {
 	        'icon'				=> 'controls-repeat',
 	        'keywords'			=> array( 'query' ),
 	    ));
+
+			// Carousel
+	    acf_register_block(array(
+	        'name'				=> 'carousel',
+	        'title'				=> __( 'Carousel' ),
+	        'description'		=> __( 'A customizable carousel block.' ),
+	        'render_callback'	=> 'whitepaper_blocks_render_callback',
+	        'category'			=> 'formatting',
+	        'icon'				=> 'slides',
+	        'keywords'			=> array( 'carousel', 'slider' ),
+	    ));
+
+			// Hero
 			acf_register_block(array(
 	        'name'				=> 'hero',
 	        'title'				=> __( 'Hero' ),
