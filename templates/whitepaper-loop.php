@@ -14,6 +14,7 @@ $loop_layout_input = get_field( 'post_layout');
 $after_loop_layout = get_field( 'after_loop_layout' );
 $taxonomy = get_field( 'taxonomy' );
 $taxonomy_term = get_field( 'taxonomy_term' );
+$offset = get_field( 'offset' );
 
 //Before The Loop
 ?>
@@ -41,6 +42,9 @@ $taxonomy_term = get_field( 'taxonomy_term' );
                   'terms'    => $taxonomy_term,
                 )
               );
+          }
+          if(!empty($offset)) {
+            $args['offset'] = $offset;
           }
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); ?>

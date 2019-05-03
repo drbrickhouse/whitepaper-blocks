@@ -223,6 +223,27 @@ function whitepaper_blocks_register_fields() {
 				'append' => '',
 				'maxlength' => '',
 			),
+			array(
+				'key' => 'field_5cb47d9ce7580',
+				'label' => 'Offset',
+				'name' => 'offset',
+				'type' => 'number',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
 		),
 		'location' => array(
 			array(
