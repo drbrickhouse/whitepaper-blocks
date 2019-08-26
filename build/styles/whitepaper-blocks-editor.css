@@ -1,0 +1,45 @@
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css';
+.wp-block-whitepaper-blocks-wrapper-block {
+  border-left: 3px dashed #5F43E3;
+  border-right: 3px dashed #5F43E3;
+  border-bottom: 3px dashed #5F43E3;
+  padding-top: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  background-size: cover;
+  background-position: center center; }
+  .wp-block-whitepaper-blocks-wrapper-block > .editor-inner-blocks {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+.wp-block-whitepaper-blocks-hero-block {
+  border-left: 3px dashed #5F43E3;
+  border-right: 3px dashed #5F43E3;
+  border-bottom: 3px dashed #5F43E3;
+  margin-left: 0;
+  margin-right: 0;
+  background-size: cover;
+  min-height: 300px; }
+  .wp-block-whitepaper-blocks-hero-block > .col-md-12 {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+.wp-block-whitepaper-blocks-loop-block {
+  border-left: 3px dashed #5F43E3;
+  border-right: 3px dashed #5F43E3;
+  border-bottom: 3px dashed #5F43E3;
+  padding: 15px;
+  margin-left: 0;
+  margin-right: 0; }
+
+.wp-block-whitepaper-blocks-carousel-block {
+  border-left: 3px dashed #5F43E3;
+  border-right: 3px dashed #5F43E3;
+  border-bottom: 3px dashed #5F43E3;
+  margin-left: 0;
+  margin-right: 0; }
+  .wp-block-whitepaper-blocks-carousel-block .carousel-indicators {
+    list-style-type: none; }
+
+.block-title {
+  background-color: #5F43E3;
+  color: #fff;
+  padding: 15px; }
