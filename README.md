@@ -55,7 +55,7 @@ The following handlebars require the [Event Organiser](https://wordpress.org/plu
 WhitePaper Handlebars allows you to create your own custom handlebars in your theme. In order to to so, create a folder in your root directory named `inc` and create a file inside of it called `whitepaper-custom-handlebars.php`. In that file, copy and paste the following code and then add your own switch cases:
 
 ```
-function whitepaper_parse_handlebars( array $matches = array() ) {
+function whitepaper_custom_handlebars( array $matches = array() ) {
 
 	if (isset($matches[1])) {
 		$key = strtolower( $matches[1] );
@@ -63,12 +63,12 @@ function whitepaper_parse_handlebars( array $matches = array() ) {
 		switch ($key) {
 			/* Write your own switch cases below and before the default value
 			*  An example switch case is included here to get you started.
-      *
-      *  case 'text-to-replace':
-  		*		return function_to_return();
-  		*		break;
-      *
-      */
+			*
+			*  case 'text-to-replace':
+			*		return function_to_return();
+			*		break;
+			*
+			*/
 
 			// default value
 			default:
