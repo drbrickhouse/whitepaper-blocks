@@ -4,13 +4,15 @@
   border-left: 3px dashed #5F43E3;
   border-right: 3px dashed #5F43E3;
   border-bottom: 3px dashed #5F43E3;
-  padding-top: 15px;
+  padding: 15px;
   margin-left: 0;
   margin-right: 0;
   background-size: cover;
   background-position: center center;
-  > .editor-inner-blocks {
+  > .wrapper-inner {
     background-color: rgba(255, 255, 255, .5);
+    margin: -15px;
+    padding: 15px;
   }
 }
 

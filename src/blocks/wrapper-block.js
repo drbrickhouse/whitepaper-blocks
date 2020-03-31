@@ -84,8 +84,10 @@ registerBlockType( 'whitepaper-blocks/wrapper-block', {
           id={ props.attributes.blockId }
           style={ {backgroundImage: props.attributes.backgroundImageStyle} }
         >
-  				<InnerBlocks />
-  			</div>
+          <div className='wrapper-inner'>
+    				<InnerBlocks />
+    			</div>
+        </div>
       </div>
 		]);
 	},

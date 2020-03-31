@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 // Render callback functions - these call the template files
 function whitepaper_loop_block_render($attributes) {
 	ob_start();
-	require_once( 'templates/loop-block.php' );
+	require( 'templates/loop-block.php' );
 	$output = ob_get_clean();
 
 	return $output;
@@ -21,7 +21,7 @@ function whitepaper_loop_block_render($attributes) {
 
 function whitepaper_carousel_block_render($attributes) {
 	ob_start();
-	require_once( 'templates/carousel-block.php' );
+	require( 'templates/carousel-block.php' );
 	$output = ob_get_clean();
 
 	return $output;
