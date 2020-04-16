@@ -10,6 +10,7 @@
   background-size: cover;
   background-position: center center;
   > .wrapper-inner {
+    flex-grow: 1;
     background-color: rgba(255, 255, 255, .5);
     margin: -15px;
     padding: 15px;
@@ -36,6 +37,12 @@
   padding: 15px;
   margin-left: 0;
   margin-right: 0;
+  > .wp-block-whitepaper-blocks-loop-block {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 0;
+  }
 }
 
 .wp-block-whitepaper-blocks-carousel-block {
