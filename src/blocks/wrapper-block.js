@@ -1,7 +1,7 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks, InspectorControls, MediaUpload } = wp.editor;
-const { PanelBody, TextControl } = wp.components;
+const { PanelBody, TextControl, ColorPicker } = wp.components;
 
 import { renderImageUpload } from '../modules/functions';
 
@@ -34,6 +34,10 @@ registerBlockType( 'whitepaper-blocks/wrapper-block', {
 		backgroundImageStyle: {
 			type: 'string',
 			default: null,
+		},
+		backgroundColor: {
+			type: 'string',
+			default: 'rgba(255,255,255,0)'
 		}
   },
 	keywords: [
@@ -66,6 +70,13 @@ registerBlockType( 'whitepaper-blocks/wrapper-block', {
 						value={props.attributes.backgroundImage}
 						render={({ open }) => renderImageUpload(open, props) }
 					/>
+					<ColorPicker
+			      label='Background Color'
+			      color={ props.attributes.backgroundColor }
+			      onChangeComplete={(changes) => {
+			        !changes ? props.setAttributes( {backgroundColor: null} ) : props.setAttributes( {backgroundColor: changes.hex} );
+			      }}
+			    />
           <TextControl
             label='Block ID'
 						help={__('A unique HTML ID for this block. Make sure to use all lower case and dashes instead of spaces')}
@@ -105,7 +116,7 @@ registerBlockType( 'whitepaper-blocks/wrapper-block', {
 			<div
         className={ props.className }
         id={ props.attributes.blockId }
-        style={ {backgroundImage: props.attributes.backgroundImageStyle} }
+        style={ {backgroundColor: props.attributes.backgroundColor, backgroundImage: props.attributes.backgroundImageStyle} }
       >
 				<InnerBlocks.Content />
 			</div>
